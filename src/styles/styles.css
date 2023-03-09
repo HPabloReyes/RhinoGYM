@@ -1,0 +1,13 @@
+.logonav {
+  width: 70px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.fotercontent {
+  color: black;
+}

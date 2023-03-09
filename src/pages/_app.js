@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navigation from "../components/navigation";
-//import "../styles/styles.css";
+import Foter from "../components/foter";
+import "../styles/styles.css";
 
 export default function Layout({ Component, pageProps }) {
   return (
@@ -18,6 +19,9 @@ export default function Layout({ Component, pageProps }) {
       <Navigation />
       <div>
         <Component {...pageProps} />
+      </div>
+      <div className="bottom">
+        <Foter></Foter>
       </div>
     </div>
   );
