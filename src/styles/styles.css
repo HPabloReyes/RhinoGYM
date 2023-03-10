@@ -2,12 +2,17 @@
   width: 70px;
 }
 
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 .fotercontent {
   color: black;
 }
+
+.form1 {
+  width: 50%;
+  height: 50%;
+}
+
+/* .bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+} */
