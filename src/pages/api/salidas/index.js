@@ -32,7 +32,7 @@ export default async (req, res) => {
           console.log("no hay un empleado");
         }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     case "GET":
   }

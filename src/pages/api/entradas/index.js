@@ -29,7 +29,7 @@ export default async (req, res) => {
           res.status(200).json(entrada);
         }
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     case "GET":
       try {
