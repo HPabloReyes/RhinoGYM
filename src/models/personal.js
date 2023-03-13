@@ -9,8 +9,6 @@ const personalSchema = new Schema(
       trim: true,
     },
     password: { type: String, requied: [true, "password is required"] },
-    arriveTime: { type: Date },
-    leaveTime: { type: Date },
   },
   { timestamps: true }
 );
