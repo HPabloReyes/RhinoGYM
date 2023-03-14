@@ -10,6 +10,8 @@ const usuariosSchema = new Schema(
     },
     mensualidad: { type: Date, requied: true },
     expiration: { type: Date, requied: true },
+    mensualidadMX: { type: String },
+    expirationMX: { type: String },
     active: { type: Boolean },
   },
   { timestamps: true }

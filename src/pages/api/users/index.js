@@ -23,8 +23,10 @@ export default async (req, res) => {
 
           const newUSer = new usuarios({
             name: body.name,
-            mensualidad: subscription.toLocaleString(),
-            expiration: endSubs.toLocaleString(),
+            mensualidad: subscription,
+            expiration: endSubs,
+            mensualidadMX: subscription.toLocaleString(),
+            expirationMX: endSubs.toLocaleString(),
             active: true,
           });
           const savedUser = await newUSer.save();
@@ -33,6 +35,13 @@ export default async (req, res) => {
         }
       } catch (error) {
         console.log(error);
+      }
+    case "GET":
+      try {
+        const allUsers = await usuarios.find();
+        res.status(200).json(allUsers);
+      } catch (error) {
+        res.status(400).json({ error: error.message });
       }
   }
 };
