@@ -11,8 +11,30 @@
   height: 50%;
 }
 
-/* .bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-} */
+.margin-right {
+  margin-right: 2px;
+}
+
+.fullscreen {
+  margin: 10px;
+  width: 100vh;
+}
+
+.contenedor-principal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0 10px 0;
+}
+
+.cartas {
+  display: flex;
+  max-width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 2.5px 10px 2.5px 10px;
+}
+
+.cartas:hover {
+  transform: scale(1.1);
+}

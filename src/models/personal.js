@@ -8,7 +8,6 @@ const personalSchema = new Schema(
       unique: true,
       trim: true,
     },
-    password: { type: String, requied: [true, "password is required"] },
   },
   { timestamps: true }
 );

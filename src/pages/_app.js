@@ -1,11 +1,13 @@
 import Head from "next/head";
 import Navigation from "../components/navigation";
 import Foter from "../components/foter";
+import { Provider } from "react-redux";
+import { store } from "../redux/store";
 import "../styles/styles.css";
 
 export default function Layout({ Component, pageProps }) {
   return (
-    <div>
+    <Provider store={store}>
       <Head>
         <title> Rhino GYM </title>
         {/* <link rel="icon" href="/icn.ico" /> */}
@@ -23,6 +25,6 @@ export default function Layout({ Component, pageProps }) {
       <div className="bottom">
         <Foter></Foter>
       </div>
-    </div>
+    </Provider>
   );
 }

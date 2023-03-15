@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
+
 export default function Index() {
+  const globalState = useSelector((state) => state.admin);
+  console.log("Estado", globalState);
   return (
     <div>
       <h1>Minimo producto Viable - Rhino GYM</h1>
