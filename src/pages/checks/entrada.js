@@ -17,7 +17,7 @@ export default function Entrada() {
     dispatch(chargePersonal(response.data));
   };
 
-  const handleClick = () => {
+  const handleClose = () => {
     setShow(true);
   };
 
@@ -26,9 +26,11 @@ export default function Entrada() {
   }, []);
 
   return (
-    <div className="contenedor-principal" onClick={handleClick}>
+    <div className="contenedor-principal">
       {personal.map((p) => {
-        return <PersonalCard key={p._id} name={p.name} />;
+        return (
+          <PersonalCard key={p._id} name={p.name} handleClose={handleClose} />
+        );
       })}
       <div>{show === true ? <JoinOK /> : null}</div>
     </div>

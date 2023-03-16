@@ -34,6 +34,8 @@ export default async (req, res) => {
     case "GET":
       try {
         const allEntradas = await entradas.find();
+
+        //console.log("format", format);
         res.status(200).json(allEntradas);
       } catch (error) {
         res.status(500).json({ error: error.message });

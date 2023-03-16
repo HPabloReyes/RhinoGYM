@@ -17,7 +17,7 @@ export default function Salida() {
     dispatch(chargePersonal(response.data));
   };
 
-  const handleClick = () => {
+  const handleClose = () => {
     setShow(true);
   };
 
@@ -26,9 +26,15 @@ export default function Salida() {
   }, []);
 
   return (
-    <div className="contenedor-principal" onClick={handleClick}>
+    <div className="contenedor-principal">
       {personal.map((p) => {
-        return <PersonalSalidaCard key={p._id} name={p.name} />;
+        return (
+          <PersonalSalidaCard
+            key={p._id}
+            name={p.name}
+            handleClose={handleClose}
+          />
+        );
       })}
       <div>{show === true ? <LeavOK /> : null}</div>
     </div>

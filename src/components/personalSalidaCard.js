@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default function PersonalSalidaCard({ name }) {
+export default function PersonalSalidaCard({ name, handleClose }) {
   const data = { name };
 
   const POSTEntrada = async function (input) {
@@ -17,6 +17,7 @@ export default function PersonalSalidaCard({ name }) {
 
   const handleClick = () => {
     POSTEntrada(data);
+    handleClose();
     console.log("Salida de ", data);
   };
 

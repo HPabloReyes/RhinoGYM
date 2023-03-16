@@ -13,8 +13,11 @@ export const rhinoSlice = createSlice({
     chargePersonal: (state, action) => {
       state.personal = action.payload;
     },
+    chargeControl: (state, action) => {
+      state.checador = action.payload;
+    },
   },
 });
 
-export const { chargePersonal } = rhinoSlice.actions;
+export const { chargePersonal, chargeControl } = rhinoSlice.actions;
 export default rhinoSlice.reducer;
