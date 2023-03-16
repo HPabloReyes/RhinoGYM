@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export default function PersonalCard({ name }) {
+export default function PersonalSalidaCard({ name }) {
   const data = { name };
 
   const POSTEntrada = async function (input) {
     try {
       await axios({
-        url: "/api/entradas",
+        url: "/api/salidas",
         method: "POST",
         data: input,
       });
@@ -17,8 +17,9 @@ export default function PersonalCard({ name }) {
 
   const handleClick = () => {
     POSTEntrada(data);
-    console.log("Entrada de ", data);
+    console.log("Salida de ", data);
   };
+
   return (
     <div className="cartas" onClick={handleClick}>
       <div
@@ -27,7 +28,7 @@ export default function PersonalCard({ name }) {
       >
         <div className="card-header">{name}</div>
         <div className="card-body">
-          <h4 className="card-title">Registrar Entrada</h4>
+          <h4 className="card-title">Registrar Salida</h4>
         </div>
       </div>
     </div>

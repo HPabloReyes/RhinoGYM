@@ -1,8 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import PersonalOk from "./personalOK";
 
 export default function PersonalCreate() {
   const [input, setInput] = useState({ name: "" });
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
 
   let handleChange = (e) => {
     setInput((input) => {
@@ -31,6 +37,7 @@ export default function PersonalCreate() {
     POSTEmploye(input);
     console.log("input", input);
     setInput({ name: "" });
+    setShow(true);
   };
   return (
     <div>
@@ -58,6 +65,9 @@ export default function PersonalCreate() {
           </div>
         </div>
       </form>
+      <div>
+        {show === true ? <PersonalOk handleClose={handleClose} /> : null}
+      </div>
     </div>
   );
 }

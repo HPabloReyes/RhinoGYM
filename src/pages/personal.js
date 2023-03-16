@@ -15,9 +15,11 @@ export default function Personal() {
           Checar entrada
         </div>
       </Link>
-      <div className="btn btn-danger" type="button" id="button-addon2">
-        Checar Salida
-      </div>
+      <Link href={"checks/salida"}>
+        <div className="btn btn-danger" type="button" id="button-addon2">
+          Checar Salida
+        </div>
+      </Link>
     </div>
   );
 }
