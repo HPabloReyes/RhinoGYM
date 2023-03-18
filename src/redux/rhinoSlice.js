@@ -4,6 +4,7 @@ const initialState = {
   checador: [],
   personal: [],
   usuarios: [],
+  userDetail: [],
 };
 
 export const rhinoSlice = createSlice({
@@ -16,8 +17,15 @@ export const rhinoSlice = createSlice({
     chargeControl: (state, action) => {
       state.checador = action.payload;
     },
+    chargeUsers: (state, action) => {
+      state.usuarios = action.payload;
+    },
+    chargeDetailsUser: (state, action) => {
+      state.userDetail = action.payload;
+    },
   },
 });
 
-export const { chargePersonal, chargeControl } = rhinoSlice.actions;
+export const { chargePersonal, chargeControl, chargeUsers, chargeDetailsUser } =
+  rhinoSlice.actions;
 export default rhinoSlice.reducer;

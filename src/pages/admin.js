@@ -5,7 +5,7 @@ import axios from "axios";
 import Checks from "../components/checks";
 export default function Admin() {
   const control = useSelector((state) => state.admin.checador);
-  console.log("control", control[0].entradas[0].entrada);
+  //console.log("control", control[0].entradas[0].entrada);
 
   const dispatch = useDispatch();
 

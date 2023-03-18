@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import PersonalOk from "./personalOK";
 
-export default function PersonalCreate() {
+export default function UserCreate() {
   const [input, setInput] = useState({ name: "" });
   const [show, setShow] = useState(false);
 
@@ -20,10 +20,10 @@ export default function PersonalCreate() {
     });
   };
 
-  const POSTEmploye = async function (input) {
+  const POSTUSer = async function (input) {
     try {
       await axios({
-        url: "/api/employes",
+        url: "/api/users",
         method: "POST",
         data: input,
       });
@@ -32,9 +32,8 @@ export default function PersonalCreate() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    POSTEmploye(input);
+  const handleSubmit = () => {
+    POSTUSer(input);
     console.log("input", input);
     setInput({ name: "" });
     setShow(true);
@@ -48,7 +47,7 @@ export default function PersonalCreate() {
               onChange={handleChange}
               type="text"
               className="form-control"
-              placeholder="Nombre del empleado"
+              placeholder="Nombre del usuario"
               aria-label="Recipient's username"
               aria-describedby="button-addon2"
               name="name"
@@ -67,7 +66,7 @@ export default function PersonalCreate() {
       </form>
       <div>
         {show === true ? (
-          <PersonalOk handleClose={handleClose} target={"personal"} />
+          <PersonalOk handleClose={handleClose} target={"usuario"} />
         ) : null}
       </div>
     </div>

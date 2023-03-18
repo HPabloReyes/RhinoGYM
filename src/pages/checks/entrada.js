@@ -1,9 +1,9 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chargePersonal } from "../../redux/rhinoSlice";
 import PersonalCard from "../../components/personalCard";
 import JoinOK from "../../components/joinOK";
+import axios from "axios";
 
 export default function Entrada() {
   const personal = useSelector((state) => state.admin.personal);
