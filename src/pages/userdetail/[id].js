@@ -10,9 +10,19 @@ export default function () {
 
   const usuario = useSelector((state) => state.admin.userDetail);
   //console.log(usuario);
+  const end = usuario.expirationTrue;
 
   const dispatch = useDispatch();
   const today = new Date();
+  const pruebaday = new Date(
+    today.getFullYear(),
+    today.getMonth() + 1,
+    today.getDate()
+  ); // Restar un mes a la fecha actual
+  console.log("prueba", pruebaday);
+  console.log("expiracion", usuario.expirationMX);
+  //console.log("today", today);
+  //console.log("usuario", end);
 
   const fetchData = async () => {
     const response = await axios.get(`/api/users/${id}`);
@@ -39,7 +49,7 @@ export default function () {
   };
 
   return (
-    <div>
+    <div className="contenedor-principal">
       <h1>Estos son los detalles del usuario {id}</h1>
       <div>
         <div className="card mb-3">
@@ -47,30 +57,16 @@ export default function () {
           <div className="card-body">
             <h5 className="card-title">Status del usuario</h5>
             <h6 className="card-subtitle text-muted">
-              {usuario.expiration > today ? (
-                <p className="text-danger">Suscripcion expirada</p>
-              ) : (
+              {today.getTime() <= end ? (
                 <p className="text-success">Usuario activo</p>
+              ) : (
+                <p className="text-danger">Suscripcion expirada</p>
               )}
             </h6>
           </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="d-block user-select-none"
-            width="100%"
-            height={200}
-            aria-label="Placeholder: Image cap"
-            focusable="false"
-            role="img"
-            preserveAspectRatio="xMidYMid slice"
-            viewBox="0 0 318 180"
-            style={{ fontSize: "1.125rem", textAnchor: "middle" }}
-          >
-            <rect width="100%" height="100%" fill="#868e96" />
-            <text x="50%" y="50%" fill="#dee2e6" dy=".3em">
-              Imagen del Usuario
-            </text>
-          </svg>
+          <div>
+            <img src={usuario.imagen} className={"usuario-imagen"}></img>
+          </div>
           <div className="card-body">
             <p className="card-text">
               En esta parte podrian ser agregados algunos datos de relevancia,
@@ -87,7 +83,7 @@ export default function () {
             <li className="list-group-item">Otro dato: ****</li>
           </ul>
           <div className="card-body">
-            {today < usuario.expiration ? (
+            {today.getTime() > end ? (
               <a className="card-link" onClick={handleMonth}>
                 Renovar Suscripcion
               </a>

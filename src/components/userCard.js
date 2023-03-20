@@ -7,7 +7,7 @@ export default function UserCard({ name, inscrito, expiracion, id }) {
         className="card text-white bg-danger mb-3"
         style={{ maxWidth: "15rem" }}
       >
-        <Link href={`/userdetail/${id}`}>
+        <Link href={`/userdetail/${id}`} className={"noLink"}>
           <div className="card-header">{name}</div>
           <div className="card-body">
             <h4 className="card-title">Inscripcion: {inscrito} </h4>

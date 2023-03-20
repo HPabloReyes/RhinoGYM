@@ -27,6 +27,7 @@ export default async (req, res) => {
             expiration: endSubs,
             mensualidadMX: subscription.toLocaleString(),
             expirationMX: endSubs.toLocaleString(),
+            expirationTrue: endSubs.getTime(),
             active: true,
           });
           const savedUser = await newUSer.save();

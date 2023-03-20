@@ -22,7 +22,7 @@ export default function Admin() {
     <div>
       Esta ventana podria contener un panel de administrador, protegido por
       contraseña, desde el cual consultar toda la informacion pertinente
-      <div>
+      <div className="contenedor-principal">
         {control.map((e) => {
           return (
             <Checks

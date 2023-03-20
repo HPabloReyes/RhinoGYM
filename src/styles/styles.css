@@ -70,3 +70,16 @@
   filter: brightness(0.8);
   cursor: pointer;
 }
+
+.noLink {
+  color: inherit;
+}
+
+.table-success {
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.usuario-imagen {
+  max-width: 100vh;
+}
