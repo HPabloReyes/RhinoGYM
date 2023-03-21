@@ -8,6 +8,7 @@ export default function UserCreate() {
 
   const handleClose = () => {
     setShow(false);
+    location.reload();
   };
 
   let handleChange = (e) => {

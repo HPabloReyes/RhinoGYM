@@ -32,6 +32,7 @@ export default async (req, res) => {
           mensualidad: subscription,
           expiration: endSubs,
           mensualidadMX: subscription.toLocaleString(),
+          expirationTrue: endSubs.getTime(),
           expirationMX: endSubs.toLocaleString(),
         };
         const updatedUser = await usuarios.findByIdAndUpdate(id, update, {

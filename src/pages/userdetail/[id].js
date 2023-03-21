@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { chargeDetailsUser } from "../../redux/rhinoSlice";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import PersonalOk from "../../components/personalOK";
 import axios from "axios";
 
 export default function () {
@@ -11,6 +12,26 @@ export default function () {
   const usuario = useSelector((state) => state.admin.userDetail);
   //console.log(usuario);
   const end = usuario.expirationTrue;
+  const end2 = usuario.expiration;
+
+  //#region Este codigo actualiza la informacion del mes añadiendo 30 dias
+  const objetoFechaExpiracion = new Date(end2);
+  const fechaNueva = new Date(objetoFechaExpiracion);
+  fechaNueva.setDate(objetoFechaExpiracion.getDate() + 30);
+
+  const expiration = fechaNueva;
+  const expirationTrue = fechaNueva.getTime();
+  const expirationMX = fechaNueva.toLocaleString();
+
+  // console.log(expiration);
+  // console.log(expirationTrue);
+  // console.log(expirationMX);
+  //#endregion
+  const [show, setShow] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    location.reload();
+  };
 
   const dispatch = useDispatch();
   const today = new Date();
@@ -19,10 +40,6 @@ export default function () {
     today.getMonth() + 1,
     today.getDate()
   ); // Restar un mes a la fecha actual
-  console.log("prueba", pruebaday);
-  console.log("expiracion", usuario.expirationMX);
-  //console.log("today", today);
-  //console.log("usuario", end);
 
   const fetchData = async () => {
     const response = await axios.get(`/api/users/${id}`);
@@ -35,8 +52,28 @@ export default function () {
     }
   }, [id]);
 
+  const updateMonth = async () => {
+    setShow(true);
+    try {
+      console.log("agregando 30 dias");
+
+      await axios({
+        url: `/api/meses/${id}`,
+        method: "PUT",
+        data: {
+          expiration: expiration,
+          expirationTrue: expirationTrue,
+          expirationMX: expirationMX,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleMonth = async () => {
     console.log(id);
+
     try {
       await axios({
         url: `/api/users/${id}`,
@@ -57,7 +94,7 @@ export default function () {
           <div className="card-body">
             <h5 className="card-title">Status del usuario</h5>
             <h6 className="card-subtitle text-muted">
-              {today.getTime() <= end ? (
+              {today <= end ? (
                 <p className="text-success">Usuario activo</p>
               ) : (
                 <p className="text-danger">Suscripcion expirada</p>
@@ -90,12 +127,21 @@ export default function () {
             ) : (
               <p className="text-success">Usuario activo</p>
             )}
-            <a href="#" className="card-link">
+            <a className="card-link" onClick={updateMonth}>
               Agregar 30 dias
             </a>
           </div>
           <div className="card-footer text-muted">2 days ago</div>
         </div>
+      </div>
+      <div>
+        {show === true ? (
+          <PersonalOk
+            handleClose={handleClose}
+            target={"usuario"}
+            accion={"actualizado"}
+          />
+        ) : null}
       </div>
     </div>
   );
