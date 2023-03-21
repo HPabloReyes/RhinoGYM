@@ -67,7 +67,11 @@ export default function UserCreate() {
       </form>
       <div>
         {show === true ? (
-          <PersonalOk handleClose={handleClose} target={"usuario"} />
+          <PersonalOk
+            handleClose={handleClose}
+            target={"usuario"}
+            accion={"Registrado"}
+          />
         ) : null}
       </div>
     </div>
