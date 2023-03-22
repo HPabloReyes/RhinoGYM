@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chargePersonal } from "../../redux/rhinoSlice";
-import carga from "../../../public/carga.gif";
-import PersonalCard from "../../components/personalCard";
-import JoinOK from "../../components/joinOK";
+import PersonalCard from "../../components/empleados/personalCard";
+import JoinOK from "../../components/empleados/joinOK";
 import axios from "axios";
 
 export default function Entrada() {

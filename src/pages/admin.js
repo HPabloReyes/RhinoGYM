@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chargeControl } from "../redux/rhinoSlice";
 import axios from "axios";
-import Checks from "../components/checks";
+import Checks from "../components/empleados/checks";
 export default function Admin() {
   const control = useSelector((state) => state.admin.checador);
   //console.log("control", control[0].entradas[0].entrada);

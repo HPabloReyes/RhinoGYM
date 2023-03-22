@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import PersonalOk from "./personalOK";
+import PersonalOk from "../empleados/personalOK";
 
 export default function UserCreate() {
   const [input, setInput] = useState({ name: "" });

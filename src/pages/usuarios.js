@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { chargeUsers } from "../redux/rhinoSlice";
-import UserCard from "../components/userCard";
-import UserCreate from "../components/userCreate";
+import UserCard from "../components/usuarios/userCard";
+import UserCreate from "../components/usuarios/userCreate";
 import axios from "axios";
 
 export default function Usuarios() {

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { chargeDetailsUser } from "../../redux/rhinoSlice";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import PersonalOk from "../../components/personalOK";
+import PersonalOk from "../../components/empleados/personalOK";
 import axios from "axios";
 
 export default function () {

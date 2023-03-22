@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PersonalCreate from "../components/personalCreate";
+import PersonalCreate from "../components/empleados/personalCreate";
 
 export default function Personal() {
   return (
