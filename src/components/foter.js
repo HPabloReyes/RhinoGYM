@@ -78,7 +78,7 @@ export default function Foter() {
 
         {/* Copyright */}
         <span className="copyright">
-          © Copyright - 3DSeller | All Right Reserverd
+          © Copyright - Rhino GYM | All Right Reserverd
         </span>
       </div>
     </footer>
