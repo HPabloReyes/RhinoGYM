@@ -19,8 +19,7 @@ export default async (req, res) => {
       } catch (error) {
         res.status(400).json({ error: error.message });
       }
-    default:
-      res.status(200).json({ msg: "this method is not suported" });
+
     case "PUT":
       try {
         const subscription = new Date();
