@@ -1,7 +1,3 @@
-.logonav {
-  width: 70px;
-}
-
 .fotercontent {
   color: black;
 }
@@ -46,12 +42,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
 }
 
 .hijo {
-  transform: translate(40%, 30%);
+  transform: translate(40%);
   width: 100%;
   height: 100%;
 }
@@ -64,6 +60,7 @@
 
 .hijo:hover {
   filter: brightness(0.8);
+  cursor: pointer;
 }
 
 .hijo2:hover {
@@ -83,3 +80,109 @@
 .usuario-imagen {
   max-width: 100vh;
 }
+
+.card-link {
+  cursor: pointer;
+}
+
+.logonav {
+  width: 100px;
+}
+
+.margin1 {
+  flex-direction: column;
+  margin: 10px;
+}
+
+/*////////// Start Footer //////////*/
+
+.contenedor-foter {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--light-color);
+  position: relative;
+  margin-top: 50px;
+  padding: 70px 0;
+}
+footer .footer-data {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.footer-data_item {
+  display: flex;
+  margin-bottom: 15px;
+}
+.footer-data_item p {
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+}
+.footer-data_item .social {
+  color: var(--main-color);
+}
+.footer-data_item img {
+  /* object-fit: cover; */
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  display: flex;
+}
+
+.copyright {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.left,
+.center,
+.right {
+  flex: 1; /* cada div ocupa el 1/3 del espacio disponible */
+}
+
+/* alinea los divs horizontalmente */
+.container {
+  justify-content: space-between;
+}
+
+/* para centrar verticalmente el contenido en los divs */
+.left,
+.center,
+.right {
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer-data {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .contenedor-principal {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+  }
+
+  .usuario-imagen {
+    max-width: 100%;
+  }
+}
+/*////////// End Footer //////////*/

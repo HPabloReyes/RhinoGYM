@@ -29,17 +29,21 @@ export default function Usuarios() {
         <UserCreate />
       </div>
       <div className="contenedor-principal">
-        {usuarios.map((u) => {
-          return (
-            <UserCard
-              id={u._id}
-              key={u._id}
-              name={u.name}
-              inscrito={u.mensualidadMX}
-              expiracion={u.expirationMX}
-            />
-          );
-        })}
+        {usuarios.length < 1 ? (
+          <img src="carga.gif"></img>
+        ) : (
+          usuarios.map((u) => {
+            return (
+              <UserCard
+                id={u._id}
+                key={u._id}
+                name={u.name}
+                inscrito={u.mensualidadMX}
+                expiracion={u.expirationMX}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );

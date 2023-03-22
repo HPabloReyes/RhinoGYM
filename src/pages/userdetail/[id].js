@@ -87,7 +87,10 @@ export default function () {
 
   return (
     <div className="contenedor-principal">
-      <h1>Estos son los detalles del usuario {id}</h1>
+      <h3 className="card-body">
+        Aqui vemos renderizada una tarjeta con la informacion del usuario
+      </h3>
+
       <div>
         <div className="card mb-3">
           <h3 className="card-header">{usuario.name}</h3>

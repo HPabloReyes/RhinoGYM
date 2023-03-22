@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function LeavOK() {
   return (
     <div className="alert">
-      <div className="hijo">
+      <div className="hijo2">
         <Link href={"/"}>
           <div
             className="card border-danger mb-3"

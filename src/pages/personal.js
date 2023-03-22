@@ -3,10 +3,10 @@ import PersonalCreate from "../components/personalCreate";
 
 export default function Personal() {
   return (
-    <div className="fullscreen">
+    <div className="">
       <div>
         <h3>Registrar personal</h3>
-        <div className="form1">
+        <div className="">
           <PersonalCreate />
         </div>
       </div>

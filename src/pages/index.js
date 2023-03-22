@@ -4,7 +4,7 @@ export default function Index() {
   const globalState = useSelector((state) => state.admin);
   console.log("Estado", globalState);
   return (
-    <div>
+    <div className="margin1">
       <h1>Minimo producto Viable - Rhino GYM</h1>
       <p>
         Bienvenido lo que usted se encuentra viendo no es más que una mínima

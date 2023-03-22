@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { chargePersonal } from "../../redux/rhinoSlice";
+import carga from "../../../public/carga.gif";
 import PersonalCard from "../../components/personalCard";
 import JoinOK from "../../components/joinOK";
 import axios from "axios";
@@ -27,11 +28,15 @@ export default function Entrada() {
 
   return (
     <div className="contenedor-principal">
-      {personal.map((p) => {
-        return (
-          <PersonalCard key={p._id} name={p.name} handleClose={handleClose} />
-        );
-      })}
+      {personal.length < 1 ? (
+        <img src="../carga.gif"></img>
+      ) : (
+        personal.map((p) => {
+          return (
+            <PersonalCard key={p._id} name={p.name} handleClose={handleClose} />
+          );
+        })
+      )}
       <div>{show === true ? <JoinOK /> : null}</div>
     </div>
   );

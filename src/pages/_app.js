@@ -19,12 +19,8 @@ export default function Layout({ Component, pageProps }) {
         ></link>
       </Head>
       <Navigation />
-      <div>
-        <Component {...pageProps} />
-      </div>
-      <div className="bottom">
-        <Foter></Foter>
-      </div>
+      <Component {...pageProps} />
+      <Foter />
     </Provider>
   );
 }

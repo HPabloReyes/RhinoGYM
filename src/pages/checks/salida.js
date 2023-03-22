@@ -27,15 +27,19 @@ export default function Salida() {
 
   return (
     <div className="contenedor-principal">
-      {personal.map((p) => {
-        return (
-          <PersonalSalidaCard
-            key={p._id}
-            name={p.name}
-            handleClose={handleClose}
-          />
-        );
-      })}
+      {personal.length < 1 ? (
+        <img src="../carga.gif"></img>
+      ) : (
+        personal.map((p) => {
+          return (
+            <PersonalSalidaCard
+              key={p._id}
+              name={p.name}
+              handleClose={handleClose}
+            />
+          );
+        })
+      )}
       <div>{show === true ? <LeavOK /> : null}</div>
     </div>
   );

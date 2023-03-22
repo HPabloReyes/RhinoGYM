@@ -4,10 +4,10 @@ export default function Navigation() {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           <img src="/gym.jpeg" className="logonav"></img>
         </a>
-        <button
+        {/* <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -17,9 +17,9 @@ export default function Navigation() {
           aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button> */}
+        {/* clase para hacer colapsable la nav bar collapse navbar-collapse */}
+        <div class="" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <Link href="/" legacyBehavior>
@@ -44,7 +44,7 @@ export default function Navigation() {
               </Link>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          {/* <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
               type="search"
@@ -54,7 +54,7 @@ export default function Navigation() {
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </nav>
     </div>
