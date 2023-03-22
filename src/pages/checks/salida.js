@@ -40,7 +40,9 @@ export default function Salida() {
           );
         })
       )}
-      <div>{show === true ? <LeavOK /> : null}</div>
+      <div className={show === true ? "alert" : ""}>
+        {show === true ? <LeavOK /> : null}
+      </div>
     </div>
   );
 }

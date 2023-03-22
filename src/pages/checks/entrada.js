@@ -37,7 +37,9 @@ export default function Entrada() {
           );
         })
       )}
-      <div>{show === true ? <JoinOK /> : null}</div>
+      <div className={show === true ? "alert" : ""}>
+        {show === true ? <JoinOK /> : null}
+      </div>
     </div>
   );
 }

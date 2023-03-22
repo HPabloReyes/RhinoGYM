@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function joinOK() {
   return (
-    <div className="alert">
-      <div className="hijo2">
+    <div className="hijo2">
+      <div className="">
         <Link href={"/"}>
           <div
             className="card border-danger mb-3"
