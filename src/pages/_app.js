@@ -10,7 +10,7 @@ export default function Layout({ Component, pageProps }) {
     <Provider store={store}>
       <Head>
         <title> Rhino GYM </title>
-        {/* <link rel="icon" href="/icn.ico" /> */}
+        <link rel="icon" href="favicon.ico" />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css"
