@@ -3,7 +3,7 @@ import personal from "../../../models/personal";
 
 dbConnect();
 
-export default async function handler(req, res) {
+export default async (req, res) => {
   const { method, body } = req;
 
   switch (method) {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         //console.log("employes", employes);
         res.status(200).json(employes);
       } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(400).json({ error: error.message });
       }
 
     case "POST":
@@ -23,10 +23,10 @@ export default async function handler(req, res) {
         console.log("savedEmploye", savedEmploye);
         res.status(201).json(savedEmploye);
       } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.log(error);
       }
 
     default:
       return res.status(400).json({ msg: "this method is not suported" });
   }
-}
+};
