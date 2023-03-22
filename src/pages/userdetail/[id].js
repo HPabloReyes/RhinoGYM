@@ -87,13 +87,12 @@ export default function () {
 
   return (
     <div className="contenedor-principal">
-      <h3 className="card-body">
-        Aqui vemos renderizada una tarjeta con la informacion del usuario
-      </h3>
-
       <div>
         <div className="card mb-3">
           <h3 className="card-header">{usuario.name}</h3>
+          <div className="card-footer text-muted">
+            Esta pagina renderiza informacion a detalle de cada usuario
+          </div>
           <div className="card-body">
             <h5 className="card-title">Status del usuario</h5>
             <h6 className="card-subtitle text-muted">
@@ -134,7 +133,6 @@ export default function () {
               Agregar 30 dias
             </a>
           </div>
-          <div className="card-footer text-muted">2 days ago</div>
         </div>
       </div>
       <div>
