@@ -39,8 +39,5 @@ export default async (req, res) => {
       } catch (error) {
         res.status(400).json({ error: error.message });
       }
-
-    default:
-      return res.status(400).json({ msg: "this method is not suported" });
   }
 };
