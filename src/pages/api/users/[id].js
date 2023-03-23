@@ -14,7 +14,11 @@ export default async (req, res) => {
     case "GET":
       try {
         const usuario = await usuarios.findById(id);
-        if (!usuario) res.status(404).json({ msg: "User not found" });
+        if (!usuario) {
+          res.status(404).json({ msg: "User not found" });
+          break;
+        }
+
         res.status(200).json(usuario);
       } catch (error) {
         res.status(400).json({ error: error.message });

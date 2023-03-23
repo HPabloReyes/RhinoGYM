@@ -25,7 +25,10 @@ export default async (req, res) => {
         const updatedUser = await usuarios.findByIdAndUpdate(id, update, {
           new: true,
         });
-        if (!updatedUser) res.status(404).json({ msg: "User not found" });
+        if (!updatedUser) {
+          res.status(404).json({ msg: "User not found" });
+          break;
+        }
         res.status(200).json(updatedUser);
       } catch (error) {
         console.log(error);
