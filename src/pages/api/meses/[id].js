@@ -13,9 +13,6 @@ export default async (req, res) => {
   switch (method) {
     case "PUT":
       try {
-        const user = await usuarios.findById(id);
-        if (!user) res.status(404).json({ msg: "User not found" });
-
         const expiration = body.expiration;
         const expirationTrue = body.expirationTrue;
         const expirationMX = body.expirationMX;
