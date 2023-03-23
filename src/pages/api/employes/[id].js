@@ -24,8 +24,9 @@ export default async (req, res) => {
         const updatedEmploye = await personal.findByIdAndUpdate(id, body, {
           new: true,
         });
-        if (!updatedEmploye)
+        if (!updatedEmploye) {
           return res.status(404).json({ msg: "Employe not found" });
+        }
         return res.status(200).json(updatedEmploye);
       } catch (error) {
         res.status(500).json({ error: error.message });

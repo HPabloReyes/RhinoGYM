@@ -26,10 +26,9 @@ export default async (req, res) => {
           new: true,
         });
         if (!updatedUser) {
-          res.status(404).json({ msg: "User not found" });
-          break;
+          return res.status(404).json({ msg: "User not found" });
         }
-        res.status(200).json(updatedUser);
+        return res.status(200).json(updatedUser);
       } catch (error) {
         console.log(error);
       }

@@ -32,7 +32,7 @@ export default async (req, res) => {
           });
           const savedUser = await newUSer.save();
           console.log("savedUser", savedUser.expiration);
-          res.status(201).json(savedUser);
+          return res.status(201).json(savedUser);
         }
       } catch (error) {
         console.log(error);
@@ -40,9 +40,9 @@ export default async (req, res) => {
     case "GET":
       try {
         const allUsers = await usuarios.find();
-        res.status(200).json(allUsers);
+        return res.status(200).json(allUsers);
       } catch (error) {
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
       }
   }
 };

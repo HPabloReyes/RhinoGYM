@@ -15,13 +15,12 @@ export default async (req, res) => {
       try {
         const usuario = await usuarios.findById(id);
         if (!usuario) {
-          res.status(404).json({ msg: "User not found" });
-          break;
+          return res.status(404).json({ msg: "User not found" });
         }
 
-        res.status(200).json(usuario);
+        return res.status(200).json(usuario);
       } catch (error) {
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
       }
 
     case "PUT":
@@ -41,10 +40,11 @@ export default async (req, res) => {
         const updatedUser = await usuarios.findByIdAndUpdate(id, update, {
           new: true,
         });
-        if (!updatedUser) res.status(404).json({ msg: "User not found" });
-        res.status(200).json(updatedUser);
+        if (!updatedUser)
+          return res.status(404).json({ msg: "User not found" });
+        return res.status(200).json(updatedUser);
       } catch (error) {
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
       }
   }
 };
