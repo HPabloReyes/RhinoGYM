@@ -18,12 +18,12 @@ export default async (req, res) => {
 
         const expiration = body.expiration;
         const expirationTrue = body.expirationTrue;
-        const expirationMX = body.expirationMX;
+        //const expirationMX = body.expirationMX;
 
         const update = {
           expiration: expiration,
           expirationTrue: expirationTrue,
-          expirationMX: expirationMX,
+          //expirationMX: expirationMX,
         };
         const updatedUser = await usuarios.findByIdAndUpdate(id, update, {
           new: true,
