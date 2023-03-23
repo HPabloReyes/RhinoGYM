@@ -4,8 +4,8 @@ export default function PersonalOk(props, { target, accion }) {
   };
 
   return (
-    <div className="alert">
-      <div className="hijo" onClick={handleButon}>
+    <div className="hijo2">
+      <div className="" onClick={handleButon}>
         <div className="card border-danger mb-3" style={{ maxWidth: "20rem" }}>
           <div className="card-header">
             {target} {accion}

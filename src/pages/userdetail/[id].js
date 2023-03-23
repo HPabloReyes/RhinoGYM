@@ -135,7 +135,7 @@ export default function () {
           </div>
         </div>
       </div>
-      <div>
+      <div className={show === true ? "alert" : ""}>
         {show === true ? (
           <PersonalOk
             handleClose={handleClose}

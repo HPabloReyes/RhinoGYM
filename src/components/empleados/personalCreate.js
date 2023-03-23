@@ -65,7 +65,7 @@ export default function PersonalCreate() {
           </div>
         </div>
       </form>
-      <div>
+      <div className={show === true ? "alert" : ""}>
         {show === true ? (
           <PersonalOk handleClose={handleClose} target={"personal"} />
         ) : null}
