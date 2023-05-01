@@ -11,7 +11,7 @@ export default function Index() {
         <Carousel />
       </div>
       <div className="fondoHome">
-        <h1>M. P. V. - Rhino GYM</h1>
+        <h1>M. P. V. - GYM Admin</h1>
         <p className="pajust">
           Bienvenido lo que usted se encuentra viendo no es más que una mínima
           muestra de un producto o servicio, el producto final no se limita a
